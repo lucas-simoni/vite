@@ -1,0 +1,5 @@
+.husky
+config
+dist
+node_modules
+public
