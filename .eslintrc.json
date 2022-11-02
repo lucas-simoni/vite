@@ -1,0 +1,42 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "env": {
+    "browser": true,
+    "jest": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    // Tells ESLint how to resolve imports
+    "import/resolver": {
+      "node": {
+        "paths": ["src"],
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  },
+  "extends": [
+    // ESLint and TypeScript ESLint recommended rules
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    // Tells ESLint how to resolve imports
+    "plugin:import/recommended",
+    // Checks for accessiblity issues
+    "plugin:jsx-a11y/recommended",
+    // React specific linting rules
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
+    "plugin:react-hooks/recommended",
+    // Disable formatting rules in ESLint that Prettier is going to be
+    // responsible for handling. This has to come last, always.
+    "prettier"
+  ],
+  "plugins": ["@typescript-eslint", "react"],
+  "rules": {}
+}
