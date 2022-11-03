@@ -26,3 +26,6 @@ dist-ssr
 # Environment Variables
 .envrc
 *.local
+
+# Code Coverage
+coverage
