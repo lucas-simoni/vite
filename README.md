@@ -35,7 +35,13 @@ Locally preview the production build.
 
 #### `pnpm test`
 
-Run the application tests.
+Run the application tests in watch mode.
+
+This project uses the [Vitest](https://vitest.dev/) framework to run tests using the [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/). There are [IDE integrations](https://vitest.dev/guide/ide.html) for Vitest, so make sure you take a look at those, since they're very helpful.
+
+#### `pnpm coverage`
+
+Run the application tests and generate coverage report.
 
 #### `pnpm lint`
 
@@ -47,15 +53,8 @@ This project comes with [Eslint](https://eslint.org/) and [Prettier](https://pre
 
 husky lint-staged commitlint commitizen conventionalcommits
 
-### A
-
-@types/jest
-jest-environment-jsdom
-jest-watch-typeahead
-
 react query (zustand or jotai if necessary)
 "tailwindcss": "^3.2.1",
 react-hook-form + zod
 zod for api validation (instead of proptypes)
 react-helmet-async
-web-vitals
