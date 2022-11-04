@@ -65,9 +65,11 @@ All that is possible by using native git hooks by leveraging the [husky](https:/
 
 [Tailwind CSS](https://github.com/tailwindlabs/tailwindcss), a utility-first CSS framework for rapidly building custom user interfaces.
 
-### State Managament
+### State Managament and Data Fetching
 
-[React Query](https://tanstack.com/query/v4/docs/overview), a powerful asynchronous state management for TS and React. It gives us declarative, always-up-to-date auto-managed queries and mutations that directly improve both the developer and user experiences.
+[Axios](https://github.com/axios/axios), a simple promise based HTTP client for the browser. Axios provides a simple to use library in a small package with a very extensible interface.
+
+[React Query](https://tanstack.com/query/v4/docs/overview), a powerful asynchronous state management for TS and React. It gives us declarative, always-up-to-date auto-managed queries and mutations that directly improve both the developer and user experiences. [Practical React Query](https://tkdodo.eu/blog/practical-react-query) is a must read.
 
 If `useState()` is not working for us (too much prop drilling) we also have good alternatives to use:
 
