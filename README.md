@@ -1,4 +1,4 @@
-# Vite App
+# Vite + React + TypeScript
 
 This project was bootstrapped with [Vite](https://vitejs.dev/).
 
