@@ -1,6 +1,6 @@
 # Vite + React + TypeScript
 
-This project was bootstrapped with [Vite](https://vitejs.dev/).
+This project was initially bootstrapped with [Vite](https://vitejs.dev/).
 
 ## Development
 
