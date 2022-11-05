@@ -1,13 +1,19 @@
 /// <reference types="vitest" />
 /// <reference types="vite/client" />
+
 import react from '@vitejs/plugin-react';
 import { visualizer } from 'rollup-plugin-visualizer';
 import { defineConfig } from 'vite';
 import tsconfigPaths from 'vite-tsconfig-paths';
+import viteCompression from 'vite-plugin-compression';
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), tsconfigPaths(), visualizer({ gzipSize: true })],
+  plugins: [
+    react(),
+    tsconfigPaths(),
+    viteCompression({ algorithm: 'gzip' }),
+    visualizer({ gzipSize: true }),
+  ],
   envDir: './config',
   test: {
     globals: true,

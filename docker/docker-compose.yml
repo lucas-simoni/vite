@@ -1,0 +1,16 @@
+version: '3.9'
+
+services:
+  app:
+    stdin_open: true
+    tty: true
+    build:
+      context: ../
+      dockerfile: Dockerfile
+      target: dependencies
+    ports:
+      - '4173:4173'
+      - '5173:5173'
+    volumes:
+      - ../:/code
+      - /code/node_modules
