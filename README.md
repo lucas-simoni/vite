@@ -27,7 +27,7 @@ As code changes are made Vite provides instant and precise updates without reloa
 
 #### `pnpm build`
 
-Build to the `dist` folder.
+Build to the `./dist` folder.
 
 This command builds for `production`, by default. To change its behavior use `--mode <development|stage|production>`.
 
@@ -99,6 +99,7 @@ Jotai and Zustand does not come pre-installed and should only be used according 
 
 ## To-dos
 
+- Make new branch with Okta and Sentry set up
 - Comment on NH UI Design Doc
   - Vite
   - S3 + CloudFront
@@ -107,4 +108,3 @@ Jotai and Zustand does not come pre-installed and should only be used according 
     - Securely delivers static files to customers globally with low latency and high transfer speeds
     - We can drop compression on build, since CloudFront supports gzip (and even better, brotli) compression out of the box
   - Are we allowed to run linting and testing directly in the CI? We should be able to reduce a lot of the time spent taking advantage of pnpm caching
-- Make new branch with Okta and Sentry set up
