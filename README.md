@@ -23,13 +23,13 @@ This project was initially bootstrapped with [Vite](https://vitejs.dev/).
 
 Start the development server at <http://localhost:5173>, using `local-dev` mode.
 
-As code changes are made Vite provides instant and precise updates without reloading the page or blowing away application state.
+> As code changes are made Vite provides instant and precise updates without reloading the page or blowing away application state.
 
 #### `pnpm build`
 
 Build to the `./dist` folder.
 
-This command builds for `production`, by default. To change its behavior use `--mode <development|stage|production>`.
+> By default, this command builds for `production`. To change its behavior use `--mode <development|stage|production>`.
 
 #### `pnpm preview`
 
@@ -39,7 +39,7 @@ Locally preview the build `./dist` folder.
 
 Run the application tests in watch mode.
 
-This project uses the [Vitest](https://vitest.dev/) framework to run tests using the [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/). There are [IDE integrations](https://vitest.dev/guide/ide.html) for Vitest, so make sure you take a look at those, since they're very helpful.
+> This project uses the [Vitest](https://vitest.dev/) framework to run tests using the [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/). There are [IDE integrations](https://vitest.dev/guide/ide.html) for Vitest, so make sure you take a look at those, since they're very helpful.
 
 #### `pnpm coverage`
 
@@ -49,7 +49,43 @@ Run the application tests and generate coverage report.
 
 Lint and format the codebase.
 
-This project comes with [Eslint](https://eslint.org/) and [Prettier](https://prettier.io/) preconfigured. Linting and auto formatting are provided by mostly if not all code editors, so take advantage of that by configuring yours to work with those libraries.
+> This project comes with [Eslint](https://eslint.org/) and [Prettier](https://prettier.io/) preconfigured. Linting and auto formatting are provided by mostly if not all code editors, so take advantage of that by configuring yours to work with those libraries.
+
+### Docker commands (`Makefile`)
+
+#### `make`
+
+Show how to use the Makefile commands and what they do.
+
+#### `make bootstrap`
+
+Spin a Node.js container with all the project dependencies installed and shell into it, allowing all the commands from the section below to be used within the container.
+
+> **Note:** if you wish to work with this project using Docker only, it's possible, although not recommended due to the lack of IDE support like type syntax, autocompletion, linting, auto formatting, etc.
+
+#### `make lint`
+
+Run Eslint and Prettier within a Docker container.
+
+#### `make test`
+
+Run unit tests within a Docker container.
+
+> The tests are run in coverage mode.
+
+#### `make nginx`
+
+Build the application for the development environment (`--mode development`) and serve it using NGINX within a container. Access <http://localhost:8000> to access it.
+
+> This is useful to test if the application runs as expected, since this is how it's gonna be deployed to be served.
+
+#### `make down`
+
+Stop and remove containers, networks, volumes, and images created by the commands above.
+
+#### `make docker-build`
+
+Build and tag the application Docker image for a specific environment. It requires the `BUILD_MODE` environment variable to be set with one of the following values: **development**, **stage** or **production**.
 
 ### Committing your changes
 

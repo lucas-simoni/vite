@@ -35,14 +35,14 @@ down:					## Stop and remove containers, networks, volumes, and images created b
 	./scripts/docker-compose-down.sh ./docker/docker-compose.yml
 
 .PHONY: docker-build
-docker-build:	## Build and tag the Docker image using
+docker-build:	## Build and tag the application Docker image for a specific environment.
 ifneq ($(filter ${BUILD_MODE},development stage production),)
 	@echo Building Docker image for the ${BUILD_MODE} environment...
 
 	@docker build --build-arg BUILD_MODE=${BUILD_MODE} \
 		-t dkr.ecr.region.amazonaws.com/${APP_SLUG}:${APP_VERSION} .
 else
-	@echo "The BUILD_MODE environment variable is required."
+	@echo "The BUILD_MODE environment variable is unset or has an invalid value."
 	@echo "Values: <development | stage | production>"
 	@exit 1
 endif
