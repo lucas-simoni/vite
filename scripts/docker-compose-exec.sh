@@ -5,4 +5,4 @@ set -x
 
 COMPOSE=$(command -v docker-compose)
 
-${COMPOSE} -f "${1}" -p "${APP_NAME}" exec "${2}" /bin/sh
+${COMPOSE} -f "${1}" -p "${APP_SLUG}" exec "${2}" /bin/sh

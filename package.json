@@ -1,5 +1,5 @@
 {
-  "name": "vite-app",
+  "name": "vite",
   "private": true,
   "version": "0.0.1",
   "engines": {
@@ -7,7 +7,7 @@
   },
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --mode local-dev",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "test": "vitest",

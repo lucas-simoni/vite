@@ -5,5 +5,7 @@ services:
     build:
       context: ../
       dockerfile: Dockerfile
+      args:
+        - BUILD_MODE=development
     ports:
       - '8000:80'

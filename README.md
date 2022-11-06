@@ -21,17 +21,19 @@ This project was initially bootstrapped with [Vite](https://vitejs.dev/).
 
 #### `pnpm dev`
 
-Start the development server at <http://localhost:5173>.
+Start the development server at <http://localhost:5173>, using `local-dev` mode.
 
 As code changes are made Vite provides instant and precise updates without reloading the page or blowing away application state.
 
 #### `pnpm build`
 
-Build for production to the `dist` folder.
+Build to the `dist` folder.
+
+This command builds for `production`, by default. To change its behavior use `--mode <development|stage|production>`.
 
 #### `pnpm preview`
 
-Locally preview the production build.
+Locally preview the build `./dist` folder.
 
 #### `pnpm test`
 
@@ -93,3 +95,16 @@ Jotai and Zustand does not come pre-installed and should only be used according 
 - [Sentry SDK](https://docs.sentry.io/platforms/javascript/guides/react/)
 - [React Hook Form](https://github.com/react-hook-form/react-hook-form) and [zod](https://github.com/colinhacks/zod) – for form state management and TS-first schema validation with static type inference
 - [React Helmet Async](https://github.com/staylor/react-helmet-async) – for document head management
+- [standard-version](https://github.com/conventional-changelog/standard-version) – for versioning, tagging and changelog generation (better used in the CI)
+
+## To-dos
+
+- Comment on NH UI Design Doc
+  - Vite
+  - S3 + CloudFront
+    - We can version just like we do in ECS/EKS, and we don't have to worry about a server serving the static files
+    - Automation should be ultimately easier
+    - Securely delivers static files to customers globally with low latency and high transfer speeds
+    - We can drop compression on build, since CloudFront supports gzip (and even better, brotli) compression out of the box
+  - Are we allowed to run linting and testing directly in the CI? We should be able to reduce a lot of the time spent taking advantage of pnpm caching
+- Make new branch with Okta and Sentry set up

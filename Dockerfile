@@ -16,7 +16,11 @@ COPY . .
 
 
 FROM base AS build
-RUN pnpm build
+
+ARG BUILD_MODE=unset
+RUN [[ "${BUILD_MODE}" == "development" || "${BUILD_MODE}" == "stage" || "${BUILD_MODE}" == "production" ]]
+
+RUN pnpm build --mode ${BUILD_MODE}
 
 
 FROM nginx:1.22.1-alpine AS prod

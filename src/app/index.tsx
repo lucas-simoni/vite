@@ -37,7 +37,9 @@ function Home() {
           />
         </a>
       </div>
-      <h1 className="mt-8 text-4xl font-bold">Vite + React + TS</h1>
+      <h1 className="mt-8 text-4xl font-bold">
+        {import.meta.env.VITE_APP_TITLE}
+      </h1>
       <div className="mt-8 flex flex-col items-center">
         <button
           className="rounded-lg border border-transparent bg-gray-900 py-2 px-4 transition ease-in-out hover:border-slate-700"
@@ -49,7 +51,10 @@ function Home() {
           Edit <code>src/app/index.tsx</code> and save to test HMR
         </p>
       </div>
-      <p className="mt-8 text-gray-400">Click on the logos to learn more</p>
+      <p className="mt-8 text-gray-400">Click on the logos to learn more!</p>
+      <p className="mt-1 text-gray-600">
+        Running in <b>{import.meta.env.MODE}</b> mode
+      </p>
     </div>
   );
 }
