@@ -23,6 +23,6 @@ RUN [[ "${BUILD_MODE}" == "development" || "${BUILD_MODE}" == "stage" || "${BUIL
 RUN pnpm build --mode ${BUILD_MODE}
 
 
-FROM nginx:1.22.1-alpine AS prod
+FROM nginx:1.23.2-alpine AS prod
 COPY --from=build ./code/config/nginx.conf /etc/nginx/conf.d/default.conf
 COPY --from=build ./code/dist/ /usr/share/nginx/html
