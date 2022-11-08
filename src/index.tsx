@@ -1,10 +1,22 @@
 import App from './app';
 import './styles/globals.css';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
+import { init as SentryInit } from '@sentry/react';
+import { BrowserTracing } from '@sentry/tracing';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { ReactQueryDevtools } from 'utils/ReactQueryDevtools';
+
+if (import.meta.env.MODE !== 'local-dev') {
+  SentryInit({
+    dsn: import.meta.env.VITE_SENTRY_DSN,
+    release: `${__APP_NAME__}@${__APP_VERSION__}`,
+    environment: import.meta.env.MODE,
+    integrations: [new BrowserTracing()],
+    tracesSampleRate: 0,
+  });
+}
 
 const queryClient = new QueryClient();
 

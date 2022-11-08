@@ -125,10 +125,18 @@ Jotai and Zustand does not come pre-installed and should only be used according 
 
 [React Router](https://reactrouter.com/en/main), a lightweight and fully-featured routing library for React.
 
+### Okta and Sentry SDKs
+
+[Okta SDK](https://github.com/okta/okta-react) and [Sentry SDK](https://docs.sentry.io/platforms/javascript/guides/react/) are preconfigured with a basic setup and should be modified according to the project's needs. Environment variables must be set in the `./config` folder and should look like this:
+
+```.env
+VITE_SENTRY_DSN=
+VITE_OKTA_ISSUER=
+VITE_OKTA_CLIENT_ID=
+```
+
 ### Recommended (_not included_)
 
-- [Okta SDK](https://github.com/okta/okta-react)
-- [Sentry SDK](https://docs.sentry.io/platforms/javascript/guides/react/)
 - [React Hook Form](https://github.com/react-hook-form/react-hook-form) and [zod](https://github.com/colinhacks/zod) – for form state management and TS-first schema validation with static type inference
 - [React Helmet Async](https://github.com/staylor/react-helmet-async) – for document head management
 - [standard-version](https://github.com/conventional-changelog/standard-version) – for versioning, tagging and changelog generation (better used in the CI)
