@@ -2,7 +2,7 @@ import reactLogo from 'assets/react.svg';
 import { useCounter } from 'hooks/useCounter';
 import { Outlet } from 'react-router-dom';
 
-export function Home() {
+export default function Home() {
   const { count, increment } = useCounter();
 
   return (

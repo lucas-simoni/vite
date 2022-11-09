@@ -8,7 +8,7 @@ import { BrowserTracing } from '@sentry/tracing';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from 'utils/ReactQueryDevtools';
 
-if (import.meta.env.MODE !== 'local-dev') {
+if (import.meta.env.VITE_SENTRY_DSN) {
   SentryInit({
     dsn: import.meta.env.VITE_SENTRY_DSN,
     release: `${__APP_NAME__}@${__APP_VERSION__}`,
