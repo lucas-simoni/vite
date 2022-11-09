@@ -166,4 +166,4 @@ VITE_OKTA_CLIENT_ID=
 
 ### To-dos
 
-[] Implement Docker `--mount=type=cache` to speed up builds
+- [ ] Implement Docker `--mount=type=cache` to speed up builds
