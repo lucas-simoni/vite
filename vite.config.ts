@@ -15,6 +15,10 @@ export default defineConfig({
     visualizer({ gzipSize: true }),
   ],
   envDir: './config',
+  define: {
+    __APP_NAME__: JSON.stringify(process.env.npm_package_name),
+    __APP_VERSION__: JSON.stringify(process.env.npm_package_version),
+  },
   test: {
     globals: true,
     environment: 'jsdom',
