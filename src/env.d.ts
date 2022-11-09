@@ -7,6 +7,10 @@ interface ImportMetaEnv {
   // Okta
   readonly VITE_OKTA_ISSUER: string;
   readonly VITE_OKTA_CLIENT_ID: string;
+  // Datadog
+  readonly VITE_DD_APPLICATION_ID: string;
+  readonly VITE_DD_CLIENT_TOKEN: string;
+  readonly VITE_DD_SITE: string?;
 }
 
 interface ImportMeta {

@@ -125,12 +125,35 @@ Jotai and Zustand does not come pre-installed and should only be used according 
 
 [React Router](https://reactrouter.com/en/main), a lightweight and fully-featured routing library for React.
 
-### Okta and Sentry SDKs
+### Crash reporting – _optional_
 
-[Okta SDK](https://github.com/okta/okta-react) and [Sentry SDK](https://docs.sentry.io/platforms/javascript/guides/react/) are preconfigured with a basic setup and should be modified according to the project's needs. Environment variables must be set in the `./config` folder and should look like this:
+[Sentry](https://docs.sentry.io/platforms/javascript/guides/react/) is used as a crash reporting tool and is automatically enabled once the `DSN` is set as an environment variable in the `./config` folder:
 
 ```.env
+# Sentry
 VITE_SENTRY_DSN=
+```
+
+### Tracing – _optional_
+
+[Datadog](https://docs.datadoghq.com/real_user_monitoring/browser/) tracing is enabled once the `application id` and the `client token` are added as environment variables in the `./config` folder:
+
+```.env
+# Datadog
+VITE_DD_APPLICATION_ID=
+VITE_DD_CLIENT_TOKEN=
+
+# Optional
+# In case the traces are being sent to somewhere other than 'datadoghq.com'
+VITE_DD_SITE=
+```
+
+### Authentication and authorization – _required_
+
+[Okta](https://github.com/okta/okta-react) is used for authentication and authorization and is required for this project to work. Make sure the Okta `issuer` and `client` are added as environment variables in the `./config` folder
+
+```.env
+# Okta
 VITE_OKTA_ISSUER=
 VITE_OKTA_CLIENT_ID=
 ```

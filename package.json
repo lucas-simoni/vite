@@ -16,6 +16,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@datadog/browser-rum": "^4.24.0",
     "@okta/okta-auth-js": "^7.0.1",
     "@okta/okta-react": "^6.7.0",
     "@sentry/react": "^7.17.4",

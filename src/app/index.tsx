@@ -2,16 +2,9 @@ import { useNavigate } from 'react-router-dom';
 import { OktaAuth, toRelativeUrl } from '@okta/okta-auth-js';
 import { Security } from '@okta/okta-react';
 import { AppRoutes } from './AppRoutes';
+import { oktaConfig } from './config';
 
-const oktaAuth = new OktaAuth({
-  clientId: import.meta.env.VITE_OKTA_CLIENT_ID,
-  issuer: import.meta.env.VITE_OKTA_ISSUER,
-  redirectUri: `${window.location.origin}/login/callback`,
-  scopes: ['openid', 'profile', 'email'],
-  pkce: true,
-  // Set devMode for local development and the development environment
-  devMode: ['local-dev', 'development'].includes(import.meta.env.MODE),
-});
+const oktaAuth = new OktaAuth(oktaConfig);
 
 export default function App() {
   const navigate = useNavigate();

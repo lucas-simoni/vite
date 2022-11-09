@@ -4,18 +4,18 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import { init as SentryInit } from '@sentry/react';
-import { BrowserTracing } from '@sentry/tracing';
+import { datadogRum } from '@datadog/browser-rum';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from 'utils/ReactQueryDevtools';
+import { datadogConfig, sentryConfig } from 'app/config';
 
-if (import.meta.env.VITE_SENTRY_DSN) {
-  SentryInit({
-    dsn: import.meta.env.VITE_SENTRY_DSN,
-    release: `${__APP_NAME__}@${__APP_VERSION__}`,
-    environment: import.meta.env.MODE,
-    integrations: [new BrowserTracing()],
-    tracesSampleRate: 0,
-  });
+if (sentryConfig.dsn) {
+  SentryInit(sentryConfig);
+}
+
+if (datadogConfig.applicationId && datadogConfig.clientToken) {
+  datadogRum.init(datadogConfig);
+  datadogRum.startSessionReplayRecording();
 }
 
 const queryClient = new QueryClient();

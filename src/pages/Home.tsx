@@ -1,12 +1,12 @@
 import reactLogo from 'assets/react.svg';
 import { useCounter } from 'hooks/useCounter';
-import { Outlet } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default function Home() {
   const { count, increment } = useCounter();
 
   return (
-    <div className="flex h-screen w-screen flex-col items-center justify-center bg-slate-800 text-zinc-100">
+    <>
       <div className="flex">
         <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
           <img src="/vite.svg" className="mr-10 w-20" alt="Vite logo" />
@@ -44,7 +44,9 @@ export default function Home() {
       <p className="mt-1 text-gray-600">
         Running in <b>{import.meta.env.MODE}</b> mode
       </p>
-      <Outlet />
-    </div>
+      <Link to={'/protected'} className="text-xs text-gray-700">
+        pst... click me!
+      </Link>
+    </>
   );
 }
