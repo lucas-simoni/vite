@@ -134,6 +134,6 @@ Jotai and Zustand does not come pre-installed and should only be used according 
 - [React Helmet Async](https://github.com/staylor/react-helmet-async) – for document head management
 - [standard-version](https://github.com/conventional-changelog/standard-version) – for versioning, tagging and changelog generation (better used in the CI)
 
-### To-dos
+## To-dos
 
-[ ] Implement Docker `--mount=type=cache` to speed up builds
+- [ ] Implement Docker `--mount=type=cache` to speed up builds
