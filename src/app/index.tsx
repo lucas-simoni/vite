@@ -4,7 +4,7 @@ import { Security } from '@okta/okta-react';
 import { AppRoutes } from './AppRoutes';
 import { oktaConfig } from './config';
 
-const oktaAuth = new OktaAuth(oktaConfig);
+export const oktaAuth = new OktaAuth(oktaConfig);
 
 export default function App() {
   const navigate = useNavigate();
