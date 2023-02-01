@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-FROM node:18.12.0-alpine AS dependencies
+FROM node:19.5.0-alpine AS dependencies
 
 WORKDIR /code
 RUN wget "https://github.com/pnpm/pnpm/releases/latest/download/pnpm-linuxstatic-x64" -O /bin/pnpm; chmod +x /bin/pnpm;
